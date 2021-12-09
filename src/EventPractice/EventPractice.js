@@ -1,20 +1,26 @@
 import { useState } from "react";
 
 const EventPractice = () => {
-  const [message, setMessage] = useState("");
-  const [username, setUsername] = useState("");
+  const [form, setForm] = useState({
+    message: "",
+    username: "",
+  });
+
+  // 객체 비구조화를 토해 상태변수 form의 값을 message와 username 변수에 할당
+  const { message, username } = form;
 
   const handlerChange = (e) => {
-    if (e.target.name === "message") {
-      setMessage(e.target.value);
-    } else if (e.target.name === "username") {
-      setUsername(e.target.value);
-    }
+    //전개 연산자를 이용해서 객체 사본을 생성하고 그 사본에 반영
+    const newForm = { ...form, [e.target.name]: e.target.value };
+
+    // 세터함수를 이용해서 사본을 저장(반영)
+    setForm(newForm);
+    console.log(form);
   };
 
   const handlerClick = () => {
-    setMessage("");
-    setUsername("");
+    const newForm = { message: "", username: "" };
+    setForm(newForm);
   };
 
   const handlerKeyPress = (e) => {
