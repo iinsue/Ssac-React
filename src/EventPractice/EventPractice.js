@@ -1,23 +1,20 @@
 import { Component } from "react";
 
 class EventPractice extends Component {
-  constructor(props) {
-    super(props);
-    this.handlerChange = this.handlerChange.bind(this);
-    this.handlerClick = this.handlerClick.bind(this);
-    this.state = {
-      message: "",
-    };
-  }
+  state = {
+    message: "",
+    username: "",
+  };
 
-  handlerChange(e) {
-    console.log(e.target.value);
-    this.setState({ message: e.target.value });
-  }
+  handlerChange = (e) => {
+    // 계산된 속성명
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
   handlerClick() {
     this.setState({ message: "" });
   }
+
   render() {
     return (
       <div>
@@ -29,7 +26,15 @@ class EventPractice extends Component {
           value={this.state.message}
           onChange={this.handlerChange}
         />
-        <h2> 입력 내용 : {this.state.message} </h2>
+        <input
+          type="text"
+          name="username"
+          placeholder="사용자명"
+          value={this.state.username}
+          onChange={this.handlerChange}
+        />
+        <h2> message : {this.state.message} </h2>
+        <h2> username : {this.state.username} </h2>
         <button onClick={this.handlerClick}>확인</button>
       </div>
     );
