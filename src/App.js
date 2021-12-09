@@ -1,9 +1,10 @@
-import EventPro from "./EventPractice/EventPractice";
-
+//import EventPro from "./EventPractice/EventPractice";
+//import Click from "./EventPractice/clickcounter/parents";
+import Click2 from "./EventPractice/clickcounter2/parents";
 function App() {
   return (
     <div>
-      <EventPro />
+      <Click2 />
     </div>
   );
 }
