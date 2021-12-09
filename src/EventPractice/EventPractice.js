@@ -12,8 +12,14 @@ class EventPractice extends Component {
   };
 
   handlerClick() {
-    this.setState({ message: "" });
+    this.setState({ message: "", username: "" });
   }
+
+  handlerKeyPress = (e) => {
+    if (e.key === "Enter") {
+      this.handlerClick();
+    }
+  };
 
   render() {
     return (
@@ -25,6 +31,7 @@ class EventPractice extends Component {
           placeholder="입력해 보세요"
           value={this.state.message}
           onChange={this.handlerChange}
+          onKeyPress={this.handlerKeyPress}
         />
         <input
           type="text"
@@ -32,6 +39,7 @@ class EventPractice extends Component {
           placeholder="사용자명"
           value={this.state.username}
           onChange={this.handlerChange}
+          onKeyPress={this.handlerKeyPress}
         />
         <h2> message : {this.state.message} </h2>
         <h2> username : {this.state.username} </h2>
