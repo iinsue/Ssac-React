@@ -17,11 +17,12 @@ const Parent = () => {
     setBool((bool) => true);
   };
 
-  // Child Up Down
+  //Child Up Down
   const onClickUp = () => {
     setCount((count) => count + 1);
     setTotalCount((totalCount) => totalCount + 1);
   };
+
   const onClickDown = () => {
     setCount((count) => count - 1);
     setTotalCount((totalCount) => totalCount + 1);
