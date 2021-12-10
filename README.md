@@ -50,3 +50,8 @@
 
     export default IterationSample;
     ```
+
+- Javascript의 concat() 함수
+
+_상태변수가 배열 또는 객체인 경우에는_
+_복사해서 변경 후 반영해야 하는데 이 때 사용_
