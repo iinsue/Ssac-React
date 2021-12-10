@@ -1,4 +1,4 @@
-import { useState } from "react";
+//import { useState } from "react";
 //import { Component } from "react";
 //import EventPro from "./EventPractice/EventPractice";
 //import Click from "./EventPractice/clickcounter/parents";
@@ -12,16 +12,9 @@ import { useState } from "react";
 import Info from "./chapter8/Info";
 
 const App = () => {
-  const [visible, setvisible] = useState(true);
-  const handleClick = () => {
-    setvisible(!visible);
-  };
-
   return (
     <div>
-      <button onClick={handleClick}>{visible ? "숨기기" : "보이기"}</button>
-      <br></br>
-      {visible && <Info />}
+      <Info />
     </div>
   );
 };

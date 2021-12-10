@@ -1,33 +1,29 @@
-import { useState, useEffect } from "react";
+import { useReducer } from "react";
+
+function reducer(state, action) {
+  return {
+    ...state,
+    [action.name]: action.value,
+  };
+}
 
 const Info = () => {
-  const [name, setName] = useState("");
-  const [nickname, setNickName] = useState("");
-  useEffect(() => {
-    console.log("렌더링이 완료되었습니다.");
-    console.log({
-      name,
-      nickname,
-    }); //단축속성명 ( name: name, nickname: nickname) 을 이름이 동일하므로 생략한것.
-    return () => {
-      console.log("cleanup");
-    };
-  }, [name, nickname]);
-
-  const onChangeName = (e) => {
-    setName(e.target.value);
-  };
-
-  const onChangeNickName = (e) => {
-    setNickName(e.target.value);
+  const [state, dispatch] = useReducer(reducer, {
+    name: "",
+    nickname: "",
+  });
+  const { name, nickname } = state;
+  const onChange = (e) => {
+    dispatch(e.target);
   };
 
   return (
     <div>
-      <input value={name} onChange={onChangeName} placeholder="Name" />
+      <input name="name" value={name} onChange={onChange} placeholder="Name" />
       <input
+        name="nickname"
         value={nickname}
-        onChange={onChangeNickName}
+        onChange={onChange}
         placeholder="Nickname"
       />
       <div>
