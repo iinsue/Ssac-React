@@ -64,7 +64,6 @@ class LifeCycleSample extends Component {
 
     return (
       <div>
-        {this.props.missing.value} {/* 정의되지 않은 props 값을 참조 */}
         <h1 style={style} ref={(ref) => (this.myRef = ref)}>
           {this.state.number}
         </h1>

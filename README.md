@@ -1,5 +1,9 @@
 ## Ssac React
 
+## 리액트를 다루는기술 -길벗
+
+---
+
 ## Day3 Chapter6
 
 - Javascript 의 map() 함수
