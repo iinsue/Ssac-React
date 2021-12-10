@@ -9,12 +9,13 @@
 //import LifeCycleSample from "./chapter7/LifeCycleSample";
 //import ErrorBoundary from "./chapter7/ErrorBoundary";
 //import Counter from "./chapter8/Counter";
-import Info from "./chapter8/Info";
+//import Info from "./chapter8/Info";
+import Average from "./chapter8/Average";
 
 const App = () => {
   return (
     <div>
-      <Info />
+      <Average />
     </div>
   );
 };
