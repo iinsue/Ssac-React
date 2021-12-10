@@ -1,0 +1,13 @@
+.success {
+  background-color: lightgreen;
+}
+
+.failure {
+  background-color: lightcoral;
+}
+
+.password {
+  background-color: lightpink;
+  border-radius: 5px;
+  padding: 5px;
+}
